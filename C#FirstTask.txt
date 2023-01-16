@@ -1,0 +1,96 @@
+﻿using System;
+
+namespace first_C_task
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Task 1 : - Verilmiş a,b,c ədədləri üzərindən ən kiçiyini tapan p
+            Console.WriteLine("Salam. Zehmet olmasa 1ci taskimizda muqayise uchun 3 eded daxil edin");
+            int A = Convert.ToInt32(Console.ReadLine());
+            int B = Convert.ToInt32(Console.ReadLine());
+            int C = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Cavab Task 1 : ");
+            if (A < B)
+            {
+                if (A < C)
+                {
+                    Console.WriteLine(A);
+                }
+                else
+                {
+                    Console.WriteLine(C);
+                }
+            }
+            else if (B < C)
+            {
+                Console.WriteLine(B);
+            }
+            else
+            {
+                Console.WriteLine(C);
+            }
+            // Task 2 : - Verilmiş ədədlər siyahısındaki ən böyük ədədi tapan proqram
+            Console.WriteLine("Cavab Task 2 : ");
+            int[] arr = { 1, 9, 4, 125, 64, 4, 35 };
+            int max = arr[0];
+            foreach (var i in arr)
+            {
+                if (i > max)
+                {
+                    max = i;
+                }
+            }
+            Console.WriteLine(max);
+            // Task 3 : - Verilmiş ədədlər siyahısındaki 3-ə bölünən ədədlərin ədədi ortaslnl (ortalamasını) tapan proqram
+            Console.WriteLine("Cavab Task 3 : ");
+            int[]array1= {9,15,5,8,12,3,10 };
+            int sum = 0;
+            double counter = 0;
+            foreach (int i in array1)
+            {
+                if (i % 3 == 0)
+                {
+                    sum += i;
+                    counter++;
+                }
+            }
+            if (counter == 0 && array1.Length==0)
+            {
+                Console.WriteLine("Zehmet olmasa arraye ededler daxil edin.");
+            }
+            else if (counter==0)
+            {
+                Console.WriteLine("Bu arrayde 3-e bolunen eded yoxdur.");
+            }
+            else
+            {
+                Console.WriteLine(sum / counter);
+            }
+
+            // Task 4 : - Verilmiş ədədlər siyahısında 3 rəqəmli ədəd olub olmadığını tapan alqoritm
+            Console.WriteLine("Cavab Task 4 : ");
+            int[] array = { 5,11, 55};
+            int count = 0;
+            foreach (var i in array)
+            {
+                if ((i>= 100 && i < 1000)||(i>-1000 && i<=-100))
+                {
+                    Console.WriteLine("Beli bu arrayde 3 reqemli eded var.");
+                    break;
+                }
+                else
+                {
+                    count++;
+                }
+                if(count==array.Length)
+                {
+                    Console.WriteLine("Xeyr.Bu arrayde 3 reqemli eded yoxdur.");
+                }
+
+            }            
+
+        }
+    }
+}
